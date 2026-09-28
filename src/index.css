@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Anton', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* --- Paleta base (morado frío) --- */
+  --color-purple-900: #49225b;
+  --color-purple-700: #6e3482;
+  --color-purple-400: #a56abd;
+  --color-purple-100: #e7dbef;
+  --color-purple-50: #f5ebfa;
+
+  /* --- Tokens semánticos: MODO CLARO (default) --- */
+  --color-page: #fbf8fd;
+  --color-surface: #ffffff;
+  --color-surface-alt: var(--color-purple-50);
+  --color-text: var(--color-purple-900);
+  --color-text-soft: #6b5876;
+  --color-text-muted: #9c8ba6;
+  --color-border: #e4d9ec;
+  --color-accent: var(--color-purple-700);
+  --color-accent-strong: var(--color-purple-900);
+  --color-on-accent: var(--color-purple-50);
+}
+
+/* --- Tokens semánticos: MODO OSCURO --- */
+.dark {
+  --color-page: #0d0a10;
+  --color-surface: #18121d;
+  --color-surface-alt: #120d16;
+  --color-text: var(--color-purple-50);
+  --color-text-soft: rgba(231, 219, 239, 0.65);
+  --color-text-muted: rgba(231, 219, 239, 0.4);
+  --color-border: rgba(110, 52, 130, 0.25);
+  --color-accent: var(--color-purple-400);
+  --color-accent-strong: var(--color-purple-100);
+  --color-on-accent: var(--color-purple-900);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.font-display {
+  font-family: 'Anton', sans-serif;
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}

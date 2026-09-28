@@ -1,0 +1,10 @@
+{
+  "description": "Facilitates modular project organization by separating key sections and reusable components for efficient development and easy maintenance.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
